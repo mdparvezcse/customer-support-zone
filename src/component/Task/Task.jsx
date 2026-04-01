@@ -1,9 +1,17 @@
 import React from 'react';
+import TaskCard from '../TaskCard/TaskCard';
 
-const Task = () => {
+const Task = ({ selectedCard, handleCompleteBtn }) => {
+
     return (
-        <div>
-            
+        <div className=''>
+            {
+                selectedCard.map(card => <TaskCard
+                    card={card}
+                    key={card.id}
+                    handleCompleteBtn={handleCompleteBtn}
+                ></TaskCard>)
+            }
         </div>
     );
 };

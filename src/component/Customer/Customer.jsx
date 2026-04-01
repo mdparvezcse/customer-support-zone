@@ -1,7 +1,10 @@
 import React from 'react';
+import { FaRegCircle } from "react-icons/fa";
 
-const Customer = ({ customer ,handleSelectedCard}) => {
-   
+
+
+const Customer = ({ customer, handleSelectedCard }) => {
+
     return (
         <div onClick={() => handleSelectedCard(customer)} className='shadow-md rounded-xl lg:p-4 lg:space-y-2 bg-white p-2 space-y-1'>
             <div className='flex justify-between items-center'>
@@ -10,8 +13,11 @@ const Customer = ({ customer ,handleSelectedCard}) => {
                     ${customer.status === "Open" ? "bg-[#B9F8CF]"
                         : "bg-[#F8F3B9]"}
                     `}>
-                    {customer.status}
+                    <div className='flex items-center gap-2'> <FaRegCircle className={`${customer.status === "Open" ? "bg-green-500 rounded-full text-green-500"
+                        : "bg-yellow-400 rounded-full text-yellow-500"}`} />
+                        {customer.status}</div>
                 </button>
+
             </div>
 
             <p className='text-[16px]'>{customer.description}</p>

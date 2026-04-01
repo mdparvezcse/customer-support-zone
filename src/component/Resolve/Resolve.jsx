@@ -3,7 +3,7 @@ import ResolvedCard from '../ResolvedCard/ResolvedCard';
 
 const Resolve = ({completeBtn}) => {
     return (
-        <div>
+        <div >
             {
                 completeBtn.map(resolveData => <ResolvedCard resolveData={resolveData} key={resolveData.id}></ResolvedCard>)
             }
